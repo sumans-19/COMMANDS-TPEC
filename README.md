@@ -1,1 +1,2 @@
-# this is my git command repo
+# GIT & GITHUB COMMANDS 
+ACCESSING VERSION CONTROL SYSTEM 
