@@ -1,0 +1,22 @@
+->Git is a version control system.                                                         ->mkdir : makes a new directory.
+->Git helps you keep track of code changes.                                                ->cd : changes the current working directory.
+->Git is used to collaborate on code.                                                      ->ls : will list the files in the directory
+                                                                                           ->git commit -m "message" : this command performs a commit, and adds a message.
+->It is used for;                                                                          ->git log : To view the history of commits for a repository, you can use the 
+    1}Tracking code changes                                                                ->git command -help : See all the available options for the specific command.
+    2}Tracking who made changes                                                            ->git remote add origin URL : specifies that you are adding a remote repository, ->git help --all : See all possible commands
+    3}Coding collaboration.                                                                ->git help --all : See all possible commands
+
+->Staged files are files that are ready to be committed 
+to the repository you are working on
+->A README.md file that describes the repository
+->The shorthand command for git add --all is git add -A
+
+
+->Short status flags are;
+    1)?? - Untracked files
+    2)A - Files added to stage
+    3)M - Modified files
+    4)D - Deleted files
+
+->In Git, a branch is a new/separate version of the main repository.
