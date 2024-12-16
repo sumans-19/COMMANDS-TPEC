@@ -1,0 +1,5 @@
+->A fork is a copy of a repository. This is useful when you want to contribute to someone else's project or start your own project based on theirs.
+->fork is not a command in Git, but something offered in GitHub and other repository hosts.
+
+->revert is the command we use when we want to take a previous commit and add it as a new commit, keeping the log intact.
+->reset is the command we use when we want to move the repository back to a previous commit, discarding any changes made after that commit.
