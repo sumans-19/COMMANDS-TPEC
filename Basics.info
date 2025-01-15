@@ -14,9 +14,9 @@ to the repository you are working on
 
 
 ->Short status flags are;
-    1)?? - Untracked files
-    2)A - Files added to stage
-    3)M - Modified files
-    4)D - Deleted files
+    1)?? - Untracked files.
+    2)A - Files added to stage.
+    3)M - Modified files.
+    4)D - Deleted files.
 
 ->In Git, a branch is a new/separate version of the main repository.
