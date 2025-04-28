@@ -1,0 +1,102 @@
+// Including necessary header files
+#include <stdio.h>
+#include <stdlib.h>
+
+// Structure for a binary tree node
+struct TreeNode {
+    int data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+// Function to create a new node
+struct TreeNode* createNode(int value) {
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    if (newNode != NULL) {
+        newNode->data = value;
+        newNode->left = NULL;
+        newNode->right = NULL;
+    }
+    return newNode;
+}
+
+// Function to insert a node into the binary tree
+struct TreeNode* insertNode(struct TreeNode* root, int value) {
+    if (root == NULL) {
+        return createNode(value);
+    }
+
+    if (value < root->data) {
+        root->left = insertNode(root->left, value);
+    } else if (value > root->data) {
+        root->right = insertNode(root->right, value);
+    }
+
+    return root;
+}
+
+// Function to perform in-order traversal and print elements
+void inOrderTraversal(struct TreeNode* root) {
+    if (root != NULL) {
+        inOrderTraversal(root->left);
+        printf("%d ", root->data);
+        inOrderTraversal(root->right);
+    }
+}
+
+// Function to create a mirror image of a binary tree
+struct TreeNode* mirrorTree(struct TreeNode* root) {
+    if (root == NULL) {
+        return NULL;
+    }
+
+    // Swap the left and right subtrees
+    struct TreeNode* temp = root->left;
+    root->left = mirrorTree(root->right);
+    root->right = mirrorTree(temp);
+
+    return root;
+}
+
+// Function to free the memory allocated for the binary tree
+void freeTree(struct TreeNode* root) {
+    if (root != NULL) {
+        freeTree(root->left);
+        freeTree(root->right);
+        free(root);
+    }
+}
+
+int main() {
+    struct TreeNode* root = NULL;
+    int nodeValue;
+    char choice;
+
+    // Insert nodes into the binary tree
+    do {
+        printf("Input a value to insert into the binary tree (enter 0 to stop): ");
+        scanf("%d", &nodeValue);
+
+        if (nodeValue != 0) {
+            root = insertNode(root, nodeValue);
+        }
+
+    } while (nodeValue != 0);
+
+    // Print the original binary tree
+    printf("\nOriginal Binary Tree (In-order Traversal): ");
+    inOrderTraversal(root);
+    printf("\n");
+
+    // Create and print the mirror image of the binary tree
+    struct TreeNode* mirroredRoot = mirrorTree(root);
+    printf("\nMirrored Binary Tree (In-order Traversal): ");
+    inOrderTraversal(mirroredRoot);
+    printf("\n");
+
+    // Free allocated memory
+    freeTree(root);
+    freeTree(mirroredRoot);
+
+    return 0;
+}
